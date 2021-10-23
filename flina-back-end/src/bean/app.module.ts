@@ -1,26 +1,16 @@
 import { Module } from '@nestjs/common';
 
-import { DictionaryModule } from './dictionary.module';
-import { AppMysqlModule } from './app.mysql.module';
 import { Connection } from 'typeorm';
-import { LoginModule } from './login.module';
+import { AppMysqlModule } from './app.mysql.module';
 import { AppMailModule } from './app.mail.module';
-
-
+import { AppOrmModule } from './app.orm.module';
+import { AppTokenModule } from './app.token.module';
 
 @Module({
   imports: [
     AppMysqlModule,
-    DictionaryModule,
-    LoginModule,
     AppMailModule,
-  ],
-  controllers: [],
-  providers: [
-    // {
-    //   provide: APP_FILTER,
-    //   useClass: HttpExceptionFilter,
-    // },
+    AppOrmModule,
   ],
 })
 export class AppModule {

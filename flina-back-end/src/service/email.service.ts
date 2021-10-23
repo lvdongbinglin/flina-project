@@ -1,21 +1,23 @@
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable, Logger } from '@nestjs/common';
 
+const subject = "[君名]请查收您的验证码"
+
 @Injectable()
 export class EmailService {
   constructor(
     private readonly mailService: MailerService
   ) { }
 
-  send(toEmail: string, suject: string, html: string): void {
-    const code = html;
+
+  sendCode(toEmail: string, code: string): void {
     const date = new Date();
-    console.log(toEmail, suject, code, process.cwd() + "/src/inside/conf")
+    Logger.log(toEmail + subject + code)
     const emailOptions = {
       to: toEmail,
       from: '1745509482@qq.com',
-      subject: suject,
-      template: "src/inside/conf/send-code-email",
+      subject: subject,
+      template: "src/assets/send-code-email",
       context: {
         code, //验证码
         date, //日期

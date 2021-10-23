@@ -1,18 +1,18 @@
 
-export class CreateLoginDto {
+export class LoginDto {
   // 名称
-  login_name: string;
+  username: string;
   // 邮箱
   email: string;
   // 密码
   password: string;
   // 验证码
-  code: string;
+  code: number;
 }
 
 export class ChangeLoginDto {
-  old: CreateLoginDto;
-  new: CreateLoginDto;
+  old: LoginDto;
+  new: LoginDto;
 }
 
 

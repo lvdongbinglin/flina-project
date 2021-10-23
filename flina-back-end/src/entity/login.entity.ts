@@ -1,6 +1,7 @@
 import { ApiProperty, ApiTags } from "@nestjs/swagger";
 import { tag } from "src/constant/main.const";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Role } from './role.entity';
 
 
 @ApiTags(tag.core)
@@ -14,7 +15,7 @@ export class Login {
     description: "登陆名称"
   })
   @Column()
-  login_name: string;
+  username: string;
 
   @ApiProperty({
     description: "登陆密码"
@@ -26,7 +27,7 @@ export class Login {
     description: "验证码"
   })
   @Column()
-  code: Date;
+  code: number;
 
   @ApiProperty({
     description: "更新时间"
@@ -40,5 +41,12 @@ export class Login {
   })
   @Column()
   email: string;
+
+
+  //对应Role实体中的@OneToMany修饰的字段（不可以单独存在）
+  @ManyToOne(type => Role)
+  //指定本表中的外键（JoinColumn只存在于多端，因为外键只会存在于多端）
+  @JoinColumn({ name: 'role_id' })
+  role: Role;
 
 }

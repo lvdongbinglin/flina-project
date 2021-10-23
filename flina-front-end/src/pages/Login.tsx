@@ -12,7 +12,7 @@ import { useHistory, useLocation, withRouter } from 'react-router'
 import { path, usefulInfo } from '../App'
 import ExploreContainer from '../components/ExploreContainer'
 import SecureTaber, { SecureText } from '../components/SecureTaber'
-import ExampleForm from '../forms/Example'
+
 import LoginForm from '../forms/LoginForm'
 import { useSnackbar } from 'notistack'
 import { withMyMessage, withMyRouter } from '../converters/ComponentDecorator'

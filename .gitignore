@@ -105,3 +105,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# secret
+**/sercet.const.ts
+**/sercet.const.js

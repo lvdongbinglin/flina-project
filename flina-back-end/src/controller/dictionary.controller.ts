@@ -12,6 +12,6 @@ export class DictionaryController {
   @Get('list')
   list(): Observable<Dictionary[]> {
     throw new BadRequestException("参数")
-    return this.service.findAll();
+    return null;
   }
 }
