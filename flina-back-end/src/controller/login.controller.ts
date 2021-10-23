@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Query, Put, BadRequestException, Logger } from '@nestjs/common';
-import { LoginService } from './login.service';
-import { CreateLoginDto } from './login.dto';
-import { EmailService } from 'src/inside/base/email.service';
+import { LoginService } from '../service/login.service';
+import { CreateLoginDto } from '../dto/login.dto';
+import { EmailService } from '../service/email.service';
 
 
 
