@@ -9,7 +9,7 @@
     "target": "es2017",
     "sourceMap": true,
     "rootDir": "./",
-    "outDir":  "/Users/mac/Desktop/code/flina-project/flina-back-end/dist",
+    "outDir":  "build",
     "baseUrl": "./",
     "incremental": true
   }
