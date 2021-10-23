@@ -1,0 +1,18 @@
+
+.qinglin-textarea label {
+  padding: 20px 0;
+}
+.qinglin-textarea textarea {
+  padding: 20px 0;
+}
+
+#submit-block {
+  display: block;
+}
+
+#submit-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 36px;
+}

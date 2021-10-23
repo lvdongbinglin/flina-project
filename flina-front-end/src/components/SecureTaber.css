@@ -1,0 +1,41 @@
+
+
+/* form-title 登陆标题 */
+.form-title {
+  /* text-align: center; */
+}
+
+.form-title img {
+    width: 11px;
+    margin: 0 10px 0 0;
+}
+
+.form-title span {
+    text-align: left;
+    font-size: 18px;
+    color: #5993fa;
+}
+.login-taber {
+  /* margin: 15px 0 15px 0; */
+  /* text-align: center; */
+  font-size: 18px;
+  color: #737a89;
+}
+/* a.link-to 链接 */
+a.link-to {
+    font-size: 18px;
+    color: #737a89;
+    text-decoration: none;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+.link-to:hover,
+.link-to:focus {
+    color: #737a89;
+}
+
+.link-to.active {
+    color: #5288e8;
+}
+

@@ -1,0 +1,9 @@
+
+.crypto-border-list__item {
+  background: #424951;
+  background-image: linear-gradient( 
+    76deg
+     , rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0,0) 100%);
+  color: white;
+  margin: 10px 0;
+}
