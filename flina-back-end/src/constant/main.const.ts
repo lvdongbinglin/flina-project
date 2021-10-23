@@ -27,7 +27,7 @@ export const mysqlconf: TypeOrmModuleOptions =
 {
   type: 'mysql', // 数据库类型
   host: '127.0.0.1', // 数据库ip地址
-  port: 3308, // 端口
+  port: 3306, // 端口
   username: 'root', // 登录名
   password: 'rootroot', // 密码
   database: 'flina', // 数据库名称
