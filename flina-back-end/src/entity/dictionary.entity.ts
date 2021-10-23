@@ -1,5 +1,5 @@
 import { ApiProperty, ApiTags } from "@nestjs/swagger";
-import { tag } from "../main.const";
+import { tag } from "../constant/main.const";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 /**
  * 邻接表设计，使用递归设计，类似的设计还有闭包表、路径枚举、嵌套集

@@ -1,9 +1,10 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { AppModule } from './app.module';
-import { port, swaggerDocumentOption } from './main.const';
-import { HttpExceptionFilter } from './base/http-exception.filter';
-import { reqresLogger } from './base/req-res-logger.middleware';
+import { AppModule } from './bean/app.module';
+import { port, swaggerDocumentOption } from './constant/main.const';
+import { HttpExceptionFilter } from './filter/http-exception.filter';
+import { reqresLogger } from './middleware/req-res-logger.middleware';
+import { filter } from 'rxjs/operators';
 
 
 async function bootstrap() {

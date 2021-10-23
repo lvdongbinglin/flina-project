@@ -1,13 +1,9 @@
 import { Module } from '@nestjs/common';
 
-
-
-import { DictionaryModule } from './inside/domain/dictionary/dictionary.module';
+import { DictionaryModule } from './dictionary.module';
 import { AppMysqlModule } from './app.mysql.module';
 import { Connection } from 'typeorm';
-import { APP_FILTER } from '@nestjs/core';
-import { HttpExceptionFilter } from './base/http-exception.filter';
-import { LoginModule } from './inside/domain/login/login.module';
+import { LoginModule } from './login.module';
 import { AppMailModule } from './app.mail.module';
 
 
