@@ -1,5 +1,5 @@
 import { ApiProperty, ApiTags } from "@nestjs/swagger";
-import { tag } from "src/main.const";
+import { tag } from "src/constant/main.const";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 

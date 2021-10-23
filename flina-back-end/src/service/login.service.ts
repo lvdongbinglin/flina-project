@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CreateLoginDto } from './login.dto';
+import { CreateLoginDto } from '../dto/login.dto';
 import { Repository } from 'typeorm';
 
 import { InjectRepository } from '@nestjs/typeorm';
-import { Login } from '../../../entity/login.entity';
+import { Login } from '../entity/login.entity';
 
 
 

@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { LoginService } from './login.service';
-import { LoginController } from './login.controller';
+import { LoginService } from '../service/login.service';
+import { LoginController } from '../controller/login.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Login } from 'src/entity/login.entity';
-import { EmailService } from 'src/inside/base/email.service';
+import { EmailService } from '../service/email.service';
 
 
 @Module({
