@@ -1,9 +1,5 @@
 import { ApiProperty, ApiTags } from "@nestjs/swagger";
-<<<<<<< HEAD
 import { tag } from "src/constant/main.const";
-=======
-import { tag } from "src/main.const";
->>>>>>> 24004e3 (1)
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 /**
