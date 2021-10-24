@@ -26,11 +26,15 @@ import Tabs from './Tabs'
 import Login from './pages/Login'
 import Logup from './pages/Logup'
 import Pass from './pages/Pass'
+import Example from './pages/Example'
+
+import SimpleEditor from './pages/SimpleEditor'
+import SimpleViewer from './pages/SimpleViewer'
 
 export const usefulInfo = {
   back: '返回',
   // domain: 'http://www.dongqinglin.cn/flina/1.0',
-  domain: 'http://localhost:8080/flina/1.0',
+  domain: 'http://localhost:4000',
   DES_PROPERTY: 'password',
   successCode: 200,
   successType: { variant: 'success' },
@@ -71,6 +75,7 @@ export const path = {
   worksInfo: '/tab/worksInfo',
   setting: '/tab/setting',
   userInfo: '/tab/userInfo',
+  example: '/example',
 }
 
 const App: React.FC = () => (
@@ -93,6 +98,15 @@ const App: React.FC = () => (
         </Route>
         <Route path={path.tab}>
           <Tabs />
+        </Route>
+        <Route path={path.example}>
+          <Example />
+        </Route>
+        <Route path={'/simple-editor'}>
+          <SimpleEditor />
+        </Route>
+        <Route path={'/simple-viewer'}>
+          <SimpleViewer />
         </Route>
         <Route exact path={path.root}>
           <Redirect to={path.login} />
