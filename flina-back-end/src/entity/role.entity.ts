@@ -1,6 +1,7 @@
 import { ApiProperty, ApiTags } from "@nestjs/swagger";
 import { tag } from "src/constant/main.const";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Login } from 'src/entity/login.entity';
 
 
 @ApiTags(tag.core)
@@ -20,6 +21,7 @@ export class Role {
   })
   @Column()
   level: number;
+
 
 
 }

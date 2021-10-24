@@ -9,4 +9,8 @@ discribe("baseController", () => {
     const api = 'http://localhost:80';
     fetch(api, { method: "Get" }).then(res => res.text).then(() => console.log(res));
   })
+
+  it('should be equal pwd command', () => {
+    console.log(__dirname, process.cwd())
+  })
 })

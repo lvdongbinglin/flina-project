@@ -32,34 +32,20 @@ export function encryptPassword(password: string, salt: string): string {
   );
 }
 
+/**
+ * 使用hash加密密码
+ * @param password 密码
+ * @returns hash值
+ */
 export function hashPassword(password: string): string {
-  if (!password) {
-    throw new BadRequestException(passwordException);
-  }
   return getHashCode(password).toString();
 }
 
-// chorme 脚本
-// function hashPassword(password) {
-//   if (!password) {
-//     throw new BadRequestException(passwordException);
-//   }
-//   return getHashCode(password).toString();
-// }
-// function getHashCode(str) {
-
-//   let hashcode = 0
-//   for (let i = 0; i < str.length; i++) {
-//     //溢出需要每次运算后立即处理，否则可能超过js数值的表示范围。
-//     hashcode = hashcode * 31 + str.charCodeAt(i)
-//     hashcode &= 0xffffffff
-//   }
-//   return hashcode;
-// }
-
-
-
-
+/**
+ * 获取数据的hash值
+ * @param str shuju
+ * @returns hash值
+ */
 export function getHashCode(str: string) {
 
   let hashcode = 0
@@ -69,4 +55,24 @@ export function getHashCode(str: string) {
     hashcode &= 0xffffffff
   }
   return hashcode;
+}
+
+
+export function getRandomCode() {
+  return crypto.randomInt(999999);
+}
+
+export function isNull(obj: any) {
+  return obj === undefined || obj === null;
+}
+
+const hex = "hex"
+export function generateUUID() {
+  return crypto.randomBytes(16).toString(hex);
+}
+
+
+const blank = "";
+export function isBlank(str: string) {
+  return blank === str.trim()
 }
