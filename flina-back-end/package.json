@@ -30,6 +30,7 @@
     "@nestjs/swagger": "^4.8.0",
     "@nestjs/typeorm": "^7.1.5",
     "@types/passport-jwt": "^3.0.6",
+    "helmet": "^4.6.0",
     "jwt-decode": "^3.1.2",
     "mysql2": "^2.2.5",
     "nodemailer": "^6.6.1",

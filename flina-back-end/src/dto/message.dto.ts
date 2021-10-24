@@ -4,18 +4,18 @@ const clientErrorCode = 400;
 const partnerErrorCode = 500;
 
 export class Message<T> {
-  code: number;
-  message: string;
+  status: number;
+  content: string;
   extra: T
 
-  constructor(code: number, message: string, extra: T) {
-    this.code = code;
-    this.message = message;
+  constructor(code: number, content: string, extra: T) {
+    this.status = code;
+    this.content = content;
     this.extra = extra;
   }
 
-  static successful<T>(message: string, extra: T) {
-    return new Message(successCode, message, extra);
+  static successful<T>(content: string, extra: T) {
+    return new Message(successCode, content, extra);
   }
 
   static clientError<T>(message: string, extra: T) {

@@ -50,26 +50,36 @@ export class LoginController {
     Logger.log("登陆开始" + JSON.stringify(signinLoginDto))
     this.checkAndEncryto(signinLoginDto)
 
-    const isLoginSucceed = await this.loginService.login(signinLoginDto);
-    if (!isLoginSucceed) {
+    const loginUser = await this.loginService.login(signinLoginDto);
+    if (isNull(loginUser)) {
       return Message.clientError("登陆名或密码错误", null)
     }
 
     const token = await this.tokenService.genToken(signinLoginDto)
-
-    return Message.successful("登陆成功", {
-      user: signinLoginDto,
+    const result = {
+      user: loginUser,
       token
-    })
+    }
+
+    Logger.log("登陆开始" + JSON.stringify(loginUser))
+
+    return Message.successful("登陆成功", result)
 
   }
 
 
   @Put('pass')
-  changePass(@Body() createLoginDto: LoginDto) {
-    Logger.log("找回密码开始" + JSON.stringify(createLoginDto))
-    this.checkAndEncryto(createLoginDto)
-    return this.loginService.login(createLoginDto);
+  async changePass(@Body() resetPassDto: LoginDto) {
+    Logger.log("找回密码开始" + JSON.stringify(resetPassDto))
+    this.checkAndEncryto(resetPassDto)
+    let user: Login = await this.loginService.reset(resetPassDto);
+    Logger.log("找回密码结束")
+    if (user) {
+      return Message.successful("找回密码成功", null)
+    } else {
+      return Message.clientError("找回密码失败", null)
+    }
+
   }
 
   /**

@@ -42,11 +42,17 @@ export class Login {
   @Column()
   email: string;
 
+  @ApiProperty({
+    description: "角色"
+  })
+  @Column({ nullable: true })
+  role_id: number;
+
 
   //对应Role实体中的@OneToMany修饰的字段（不可以单独存在）
   @ManyToOne(type => Role)
   //指定本表中的外键（JoinColumn只存在于多端，因为外键只会存在于多端）
-  @JoinColumn({ name: 'role_id' })
+  @JoinColumn({ name: "role_id" })
   role: Role;
 
 }

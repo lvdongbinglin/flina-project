@@ -16,7 +16,7 @@ import { TokenService } from "src/service/token.service";
       // 或是在genToken时候设定
       signOptions: {
         //token的有效时长
-        expiresIn: '1h',
+        expiresIn: '2m',
       },
     }),
   ],

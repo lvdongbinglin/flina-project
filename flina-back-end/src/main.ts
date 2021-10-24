@@ -1,6 +1,7 @@
 import { NestFactory, Reflector } from '@nestjs/core';
 import { AuthGuard } from '@nestjs/passport';
 import { SwaggerModule } from '@nestjs/swagger';
+import * as helmet from 'helmet';
 import { AppModule } from './bean/app.module';
 import { port, swaggerDocumentOption, swaggerUrl } from './constant/main.const';
 import { HttpExceptionFilter } from './filter/http-exception.filter';
@@ -14,11 +15,12 @@ export function consoleSplit() {
 async function bootstrap() {
   // app
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   // filter
   app.useGlobalFilters(new HttpExceptionFilter())
   // middleware
   app.use(reqresLogger);
-
+  app.use(helmet());
   // swagger
   SwaggerModule.setup('/api', app, SwaggerModule.createDocument(app, swaggerDocumentOption));
 
